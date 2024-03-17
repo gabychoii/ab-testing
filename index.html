@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AB Testing Handin</title>
+        <link rel="stylesheet" href="styles.css" /> 
+    </head>
+
+
+    What is the overarching question you are attempting to prove/disprove? How does A/B 
+    Testing help you make useful observations on the effectiveness of one design over another?
+
+    <body>
+        <hr id="divider">
+        <div class="about"> 
+            <div id="class">CSCI 1300</div>
+        </div>
+        <hr id="divider">
+        <div id="project-name">A/B Testing</div>
+        <hr id="divider-thin">
+        <hr id="divider">
+            <div id="project-section">00 - Assignment Overview</div>
+        <hr id="bottom-divider">
+        <div class="block-2">
+            <div class="card" id="round">
+                <div class="card-title">Goal</div>
+                <div class="card-body">
+                    Run a simple A/B test on two different UI designs for an Appointment Booking website, and analyze the results.
+                    The goal is to prove that specific changes in design (explained below) can result in improved user performance
+                    and task execution. The A/B test serves to statistically determine whether a design choice could have impacted
+                    user interaction.
+                </div>
+            </div>
+            <div class="card" id="round"> 
+                <div class="card-title">Contents</div>
+                <div class="card-body">
+                    <div id="menu-item">00 - Overview</div>
+                    <div id="menu-item">01 - Website Design Change</div>
+                    <div id="menu-item">02 - Hypotheses</div>
+                    <div id="menu-item">03 - Data Collection + Analysis</div>
+                    <div id="menu-item">04 - Conclusion</div>
+                </div>
+            </div>
+        </div>
+        <hr id="divider">
+            <div id="project-section">01 - Website Design Change</div>
+        <hr id="bottom-divider">
+                <div id="section-description">
+                    PROMPT: Schedule an appointment with Adam Ng, MD at Morristown Medical Center on April 23, 2024
+                    <div class="text">Before - Version A</div>
+                    <img class="project-image" alt="Website, before design change" src="./assets/ab-test-before.png"/>
+                    <div class="card-dark">
+                        <div class="card-title">Notes</div>
+                        <div class="card-body">
+                            <div id="menu-item" >From initial observation and interaction, Version A appeared to have issues in the following areas:</div>
+                            <div id="menu-item" >Contrast - Button colors are light blue with white text, making them hard to read and differentiate</div>
+                            <div id="menu-item" >Contrast - Informative text is all in light gray, providing no contrast to highlight specific details, making information difficult to find</div>
+                            <div id="menu-item" >Organization - Based on the task at hand, the information flow of logic appears to be unintuative, as irrelevant important information was bolded and placed first</div>
+                        </div>
+                    </div>
+                    <div class="text">After - Version B</div>
+                    <img class="project-image" alt="Website, after design change" src="./assets/ab-test-after.png"/>
+                    <div class="card-dark">
+                        <div class="card-title">Notes</div>
+                        <div class="card-body">
+                            <div id="menu-item" >Change 01 - Added doctor name to top, as this is one of the main factors to consider when searching for appointments</div>
+                            <div id="menu-item" >Change 02 - Changed font to black, to make contrast from white background larger and emphasize compared to other gray information on the page</div>
+                            <div id="menu-item" >Change 03 - Changed color of buttons, and emphasized the importance of the "Schedule" button by making the color darker</div>
+                            <div id="menu-item" >Change 04 - Changed the layout of the buttons to a row format, to visually indicate the division between appointment sections </div>
+                        </div>
+                    </div>
+                        
+                    </div>
+        <hr id="divider">
+            <div id="project-section">02 - Hypotheses</div>
+        <hr id="bottom-divider">
+        <div id="section-description">
+            GOAL: Create and justify null and alternative hypotheses for the following three categories we are testing:
+            Schedule an appointment with Adam Ng, MD at Morristown Medical Center on April 23, 2024
+        </div>
+        <div class="block-3">
+            <div class="card-tall">
+                <div class="card-title">Misclick Rate</div>
+                    <div id="card-item-bold">DEFINITION</div>
+                    <div id="card-item">The frequency with which users click something else on the page before finding the correct button for the task</div>
+                    <div id="card-item-bold">NULL HYPOTHESIS</div>
+                    <div id="card-item"> There will be no difference between the misclick rate in Version A and the misclick rate in Version B</div>
+                    <div id="card-item-bold">ALTERNATIVE HYPOTHESIS</div>
+                    <div id="card-item">  There will be a difference in the misclick rate in Version A versus Version B (Version A will have a higher misclick rate than Version B)</div>
+                    <div id="card-item-bold">PREDICTION + ALT HYPOTHESIS REASONING</div>
+                    <div id="card-item">  
+                        I hypothesize that the null hypothesis will be rejected. Given the definition of misclick rate, we hypothesize that the design change made in Version B 
+                        (increased contrast in color and change in flow of information) will make the task of booking an appointment easier for users, it logically follows that the misclick rate 
+                        will likely be lower, and therefore not the same (rejecting the null hypothesis)
+                    </div>
+                    
+            </div>
+            <div class="card-tall"> 
+                <div class="card-title">Time on Page</div>
+                    <div id="card-item-bold">DEFINITION</div>
+                    <div id="card-item">The frequency with which users click something else on the page before finding the correct button for the task</div>
+                    <div id="card-item-bold">NULL HYPOTHESIS</div>
+                    <div id="card-item"> There will be no differnece in the amount of time users spend on a page (completing a task) using Version A versus Version B </div>
+                    <div id="card-item-bold">ALTERNATIVE HYPOTHESIS</div>
+                    <div id="card-item">  There will be a difference in the time users spent on page for Version A versus Version B (Users will spend more time on a page completing a task using Version A than using Version B)</div>
+                    <div id="card-item-bold">PREDICTION + ALT HYPOTHESIS REASONING</div>
+                    <div id="card-item">  
+                        I hypothesize that the null hypothesis will be rejected. Given the definition of time on page, if we hypothesize that the design change made in Version B (increased contrast in color and 
+                        change in flow of information) will make the task of booking an appointment easier for users, it logically follows that users will complete the task more quickly, resulting in a reduced amount of time 
+                        spent on the page.
+                    </div>
+            </div>
+
+            <div class="card-tall">
+                <div class="card-title">Mouse Movement</div>
+                    <div id="card-item-bold">DEFINITION</div>
+                    <div id="card-item"> The total distance (in pixels) of the user’s mouse movements</div>
+                    <div id="card-item-bold">NULL HYPOTHESIS</div>
+                    <div id="card-item"> There will be no difference in users' total distance in mouse movement (pixels) in Version A versus Version B</div>
+                    <div id="card-item-bold">ALTERNATIVE HYPOTHESIS</div>
+                    <div id="card-item">  There will be a difference in the total distance in mouse movement (pixels) in Version A versus Version B (Version A will have a higher total distance than` Version B)</div>
+                    <div id="card-item-bold">PREDICTION + ALT HYPOTHESIS REASONING</div>
+                    <div id="card-item"> 
+                        I hypothesize that the null hypothesis will be rejected. Given the definition of mouse move distance, we hypothesize that the design change made in Version B (increased contrast in color and 
+                        change in flow of information) will make the task of booking an appointment easier due to increasing the clarity of each button and its function. 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr id="divider">
+            <div id="project-section">03 - Data Collection + Analysis</div>
+        <hr id="bottom-divider">
+        <div id="section-description">
+            Next, to either reject or fail to reject the null hypothesis, I looked at the data sets for each value measured, comparing Versions A and B.
+        </div>
+        <div id="section-description">
+            For all three metrics, I conducted a one-tailed t-test due to the nature of my alternative hypothesis, which hypothesized that the misclick rate/time spent
+            on page/total distance in mouse movement for Version B would be less than the total for Version A. Thus, I tested the values of Version B against those of 
+            Version A, making a one-tailed t-test the appropriate test.
+        </div>
+        <div class="block-3">
+            <div class="card-transparent">
+                <div class="card-title">Misclick Rate</div>
+                <div class="card-body">
+                    <div id="card-item-bold">T-Score (t)</div>  
+                    <div id="card-item">1.806</div>
+                    <div id="card-item-bold">Degrees of Freedom (df)</div>  
+                    <div id="card-item">53.05</div>
+                    <div id="card-item-bold">P-Value (p)</div>  
+                    <div id="card-item"> 0.038</div>
+                </div>
+                <div id="card-item-analysis">
+                    T = 1.806 - indicates that the difference the means of Version A and B were 1.806
+                    away from zero. This shows that across the two trials, the misclick rate did see a 
+                    reduction with Version B, as hypothesized - the magnitude of this reduction was larger 
+                    than the difference we saw with time on page, but not as large as the reduction in mouse movement. 
+                </div>
+                <div id="card-item-analysis">
+                    p = 0.038 < 0.05 ⇒ statistically significant
+                </div>
+            </div>
+            <div class="card-transparent"> 
+                <div class="card-title">Contents</div>
+                <div class="card-body">
+                    <div id="card-item-bold">T-Score (t)</div>  
+                    <div id="card-item">0.789</div>
+                    <div id="card-item-bold">Degrees of Freedom (df)</div>  
+                    <div id="card-item">65.048</div>
+                    <div id="card-item-bold">P-Value (p)</div>  
+                    <div id="card-item"> 0.217</div>
+                </div>
+                <div id="card-item-analysis">
+                    T = 0.789 - indicates that the difference between the means of Version A and B were 0.789 away from zero. 
+                    This shows that across the two trials, differences in time spent on site  were not significant, suggesting 
+                    that the change in design may have not been as helpful as we’d previously hoped.
+                </div>
+                <div id="card-item-analysis">
+                    P = 0.038 < 0.05 ⇒ statistically significant
+                </div>
+            </div>
+            <div class="card-transparent"> 
+                <div class="card-title">Contents</div>
+                <div class="card-body">
+                    <div id="card-item-bold">T-Score (t)</div>  
+                    <div id="card-item">-3.343</div>
+                    <div id="card-item-bold">Degrees of Freedom (df)</div>  
+                    <div id="card-item">38.652</div>
+                    <div id="card-item-bold">P-Value (p)</div>  
+                    <div id="card-item"> 0.0009</div>
+                </div>
+                <div id="card-item-analysis">
+                    T = -3.343 - indicates that the difference the means of Version A and B were 3.343
+                    away from zero. This shows that across the two trials, differences in time spent on 
+                    site were notably large, suggesting that the change in design may have helped reduce 
+                    prior uncertainty in  navigation.
+                </div>
+                <div id="card-item-analysis">
+                    P = 0.0009 < 0.05 ⇒ statistically significant
+                </div>
+            </div>
+            <div id="project-section">Summary Statistics</div>
+            <div id="section-description">
+                <div id="data-chart">
+                    <img class="project-image" alt="Misclick Rate Chart, A vs B" src="./assets/misclickrate-chart.png"/>
+                    <img class="project-image" alt="Time on Page Chart, A vs B" src="./assets/timeonpage-chart.png"/>
+                    <img class="project-image" alt="Mouse Movement Chart, A vs B" src="./assets/mousemovement-chart.png"/>
+                </div>
+                <div id="data-chart">
+                    <img class="project-image" alt="Misclick Data Output" src="./assets/output-misclick.png"/>
+                    <img class="project-image" alt="Time on Page Data Output" src="./assets/output-timeonpage.png"/>
+                    <img class="project-image" alt="Mouse Movement Data Output" src="./assets/output-mousemovement.png"/>
+                </div>
+            </div>
+            <div id="section-description">
+                The outputs of the data analysis performed on these datasets (pictured above) represnets the shape and patterm
+                of the data. We can visualize the direction and magnitude of change graphically. In this case, the mean is the 
+                most important indicator of change between Version A and B, as it is an indicative measure of average performance
+                when completing the task at hand - given the context of our measurements, our goal is to make a design change(s)
+                that will reduce the difficulty/time of this task. Therefore, mean is a crucial measurement. 
+            </div>
+            <div id="section-description">
+                Count, which represents the size of the data set, is also important, as the larger the count, the more reliable the
+                data becomes, as it represents a larger group of people. In this case, our count is 39, which is a relatively small
+                data set - this tells us our data could be slightly biased.
+            </div>
+            <div id="section-description">
+                Lastly, median is the data point that lies in the middle of the sorted set. This value is less important than mean
+                because it can be influenced by outliers, but is generally representative of the average.
+            </div>
+            <div id="section-description">
+                An example of analysis invoving this numbers can be seen with the misclick rate output and graph - we see that the
+                misclick rate was the factor most significantly affected by the change in design from Version A to Version B. Thus,
+                this tells us that our design changes may have assisted with button/information clarity.
+            </div>
+        </div>
+        <hr id="divider">
+            <div id="project-section">04 - Conclusion</div>
+            <hr id="bottom-divider">
+            <div id="section-description">
+                <div class="card" id="wide">
+                    <div class="card-title">Conclusion</div>
+                    <div class="card-body">
+                        <div id="card-item-bold">Misclick Rate</div>
+                        <div id="menu-item">
+                            The difference between the misclick rate in Version A and Version B is statistically
+                            significant, and therefore we reject the null hypothesis. The misclick rate in Version 
+                            A is higher than the mislick rate in version B. We can assume that the changes made to 
+                            Version B (increased contrast and logic re-ordering) effectively made the task easier 
+                            to complete.
+                        </div>
+                        <div id="card-item-bold">Time on Page</div>
+                        <div id="menu-item" >
+                            The difference between the time users spent on page using Version A versus Version B is 
+                            not statistically significant, and therefore we accept the null hypothesis. We can assume 
+                            that the changes made to Version B (increased contrast and logic re-ordering) were not 
+                            effective enough to reduce the time spent on the task. 
+                        </div>
+                        <div id="card-item-bold">Mouse Movement</div>
+                        <div id="menu-item">
+                            The difference between the total distance in mouse movement on Version A and B is 
+                            statistically significant, and therefore we reject the null hypothesis. The mouse movement
+                            total in Version A is higher than the mouse movement total in Version B. We can logically
+                            assume that the increased contrast and logical-reordering of Version B made the site functions
+                            clearer and the overall task more straightforward (resulting in reduced scrolling and mouse movement)
+                        </div>
+                        <div id="card-item-conclusion">
+                            Overall, 2/3 metrics indicated statistically significant improvememnts in task efficiency after changes
+                            were made from Version A to Version B. Thus, we can conclude that the design choices were effective, but
+                            there is still room for improvement in design and further efficiency.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="section-description">
+                    <div class="card-conclusion" id="wide">
+                        <div class="card-title">Personal Conclusion</div>
+                        <div class="card-body">
+                            <div id="menu-item">
+                            Overall, this was my first experience applying principles I've learned in science classes (e.g. Scientific Method)
+                            to computer science, and more specifically UI/UX. It was interesting to think about design from a statistical and
+                            scientific view, as it helped me gage what can be detrmined "good" and "bad" design beyond the aesthetics I'm typically
+                            influenced by.
+                            </div>
+                            
+                        </div>
+                    </div>
+            </div>
+            </body>
+</html>
