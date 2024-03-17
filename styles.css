@@ -55,6 +55,17 @@ html {
     display: flex;
     justify-content: center;
 }
+#project-section-title{
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    color: #003566;
+    font-weight: bold;
+    font-style: italic;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    
+}
 
 .block-2 {
     display: flex;
